@@ -12,6 +12,13 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false,
             defaultValue: 0
         }
-    })
+    });
+    burger.associate = (models)=>{
+        burger.belongsTo(models.Customer,{
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }
     return burger;
 }
