@@ -2,59 +2,62 @@
     <div class="jumbotron">
         <h1>Le Burger!</h1>
         <div class="row">
-  
-          <div class="col-sm-4 burger1">
-              <h3>Burgers to be devoured</h3>
-<ul>
-{{#each burgers}}
-{{#unless devoured}}
-<li>{{this.burger_name}}</li>
-<button type="button" class="devourButton" id="{{this.id}}">Devour!</button>
-{{/unless}}
 
-{{/each}}
-</ul>
+            <div class="col-sm-4 burger1">
+                <h3>Burgers to be devoured</h3>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>{{this.burger_name}}</li>
+                    <button type="button" class="devourButton" id="{{this.id}}">Devour!</button>
+                    {{/unless}}
+
+                    {{/each}}
+                </ul>
             </div>
             <div class="col-sm-4 burgerMain">
                 <img src="../assets/images/burgers.jpeg" id="prettyBurgers">
                 <br>
                 <form id="burgerSubmit">
-                <div class="form-group">
-                    <div class="hideName">
-                    Name:&nbsp
-                    <input type="text" name="name" id="customerName" placeholder="Your name here"></input>
-                    <br>
-                    <br>
-                    <button type="submit" id="submitName">Submit</button>
+                    <div class="form-group">
+                        <div class="hideName">
+                            Name:&nbsp
+                            <input type="text" name="name" id="customerName" placeholder="Your name here"></input>
+                            <br>
+                            <br>
+                            <button type="submit" id="submitName">Submit</button>
+                        </div>
+                        <div class="hideHello" style="display:none">Hello <span id="nameHere"></span>, eat your burger!
+                        </div>
+                        <br>
+                        <br>
+                        <div class="hideBurger" style="display:none">
+                            Burger:
+                            <input type="text" name="addBurger" id="addBurger" placeholder="Add a Burger!"></input>
+
+                            <br>
+                            <br>
+                            <button type="submit" id="submitButton">Submit</button>
+                        </div>
                     </div>
-                    <div class="hideHello" style="display:none">Hello <span id="nameHere"></span>, eat your burger!</div>
-                    <br>
-                    <br>
-                    <div class="hideBurger" style="display:none">
-                    Burger:
-                    <input type="text" name="addBurger" id="addBurger" placeholder="Add a Burger!"></input>
-                    
-                    <br>
-                    <br>
-                    <button type="submit" id="submitButton">Submit</button>
-                    </div>
-                </div>
-</form>
+                </form>
             </div>
             <div class="col-sm-4 burger2">
                 <h3>Devoured Burgers</h3>
-    <ul>
-{{#each burgers}}
-{{#if devoured}}
-<li>{{this.burger_name}}</li>
-{{/if}}
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>{{this.burger_name}}</li>
+                    {{/if}}
 
-{{/each}}
-</ul>
-                
+                    {{/each}}
+                </ul>
+
             </div>
         </div>
-        <div class="row"><h3>Customers</h3></div>
+        <div class="row">
+            <h3>Customers</h3>
+        </div>
         <div class="row">{{#each customer}}
             {{this.name}}&nbsp&nbsp
             {{/each}}

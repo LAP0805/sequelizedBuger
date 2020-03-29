@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Customer = sequelize.define("Customer",{
+    const Customer = sequelize.define("Customer", {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
     });
-    Customer.associate = (models) =>{
+    Customer.associate = (models) => {
         Customer.hasMany(models.burger, {
             onDelete: "cascade"
         });

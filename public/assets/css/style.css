@@ -1,20 +1,24 @@
-body{
+body {
     background-image: url("../images/background.jpg");
     background-size: cover;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
-.jumbotron{
-    margin:50px;
+
+.jumbotron {
+    margin: 50px;
 }
-h1{
-    text-align:center;
-    color:red;
+
+h1 {
+    text-align: center;
+    color: red;
 }
-#prettyBurgers{
-    max-height:300px;
-    max-width:300px;
+
+#prettyBurgers {
+    max-height: 300px;
+    max-width: 300px;
     margin: 0px 0px 20px 0px;
 }
-.burgerMain{
-    text-align:center;
+
+.burgerMain {
+    text-align: center;
 }

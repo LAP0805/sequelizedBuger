@@ -1,26 +1,26 @@
 let customerId;
-$("#burgerSubmit").on("submit", function(event){
+$("#burgerSubmit").on("submit", function (event) {
     console.log(customerId)
     event.preventDefault();
-let newBurger = {
-    burger_name: $("#addBurger").val().trim(),
-    CustomerId: customerId
-}
-console.log("getting burger")
-$.ajax("/api/burgers",{
-    type: "POST",
-    data: newBurger
+    let newBurger = {
+        burger_name: $("#addBurger").val().trim(),
+        CustomerId: customerId
+    }
+    console.log("getting burger")
+    $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
 
-}).then(function(results){
-    console.log(results)
-    location.reload();
-})
+    }).then(function (results) {
+        console.log(results)
+        location.reload();
+    })
 })
 
 
 //create customer//
-$("#submitName").on("click", function(event){
-    let name=$("#customerName").val().trim();
+$("#submitName").on("click", function (event) {
+    let name = $("#customerName").val().trim();
     event.preventDefault();
     let newCustomer = {
         name: name
@@ -28,17 +28,17 @@ $("#submitName").on("click", function(event){
     $.ajax("/api/customers", {
         type: "POST",
         data: newCustomer
-    }).then(function(results){
-        customerId= results.id;
-       $(".hideName").hide();
-       $(".hideHello").show()
-       $(".hideBurger").show();
-       $("#nameHere").append(results.name)
-        
+    }).then(function (results) {
+        customerId = results.id;
+        $(".hideName").hide();
+        $(".hideHello").show()
+        $(".hideBurger").show();
+        $("#nameHere").append(results.name)
+
     })
 })
 
-$(".devourButton").on("click", function(){
+$(".devourButton").on("click", function () {
     let id = $(this).attr("id");
     let devouredBurger = {
         devoured: true
@@ -46,7 +46,7 @@ $(".devourButton").on("click", function(){
     $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devouredBurger
-    }).then(function(){
+    }).then(function () {
         location.reload();
     })
 })
